@@ -3,6 +3,28 @@
 
 Pretty printing by hindent
 
+## Install
+
+Add this library to your `stack.yaml` like the following if you use [Stack](https://docs.haskellstack.org/en/stable/README/).
+
+```yaml
+...
+extra-deps:
+- git: https://github.com/nwtgck/hindent-show.git
+  commit: 0275850f8021823f061f1948cef5ff5f0f47952c
+...
+```
+
+Then, add `hindent-show` to your `package.yaml`.
+
+```yaml
+...
+library:
+ dependencies:
+ - hindent-show
+...
+```
+
 
 ## Usage
 
