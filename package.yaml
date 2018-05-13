@@ -1,0 +1,44 @@
+name:                hindent-show
+version:             0.1.0
+github:              "nwtgck/hindent-show"
+license:             BSD3
+author:              "Ryo Ota"
+maintainer:          "nwtgck@gmail.com"
+copyright:           "2018 Ryo Ota"
+
+extra-source-files:
+- README.md
+- CHANGELOG.md
+
+# Metadata used when publishing your package
+synopsis:            Pretty printing by hindent
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/nwtgck/hindent-show#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+  dependencies:
+  - hindent
+  - bytestring
+  - haskell-src-exts 
+
+tests:
+  hindent-show-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - hindent-show
+    - hspec
+    - QuickCheck
+    - here
