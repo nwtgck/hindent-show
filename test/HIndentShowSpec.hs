@@ -48,3 +48,24 @@ Node
 }
 |] ++ "\n"
       actual `shouldBe` expect
+
+  describe "hidentFormat" $ do
+    it "simple tree" $ do
+      let tree1 = Node 1 (Node 2 Leaf (Node 1 (Node 2 Leaf Leaf) Leaf)) (Node 1 (Node 2 Leaf Leaf) Leaf)
+      let actual = hidentFormat "a = [332521132,20783,30,4093902,1390,109301,93132,3901,83912,218491,284913]"
+      let expect = [Here.here|
+a =
+  [ 332521132
+  , 20783
+  , 30
+  , 4093902
+  , 1390
+  , 109301
+  , 93132
+  , 3901
+  , 83912
+  , 218491
+  , 284913
+  ]
+|] ++ "\n"
+      actual `shouldBe` expect
