@@ -11,7 +11,7 @@ Add this library to your `stack.yaml` like the following if you use [Stack](http
 ...
 extra-deps:
 - git: https://github.com/nwtgck/hindent-show.git
-  commit: 0275850f8021823f061f1948cef5ff5f0f47952c
+  commit: 7b3c1fa21f7fac8f124361d1ab8fdaf0155a1445
 ...
 ```
 
