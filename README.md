@@ -3,8 +3,30 @@
 
 Pretty printing by hindent
 
+## Install
 
-## Usage
+Add this library to your `stack.yaml` like the following if you use [Stack](https://docs.haskellstack.org/en/stable/README/).
+
+```yaml
+...
+extra-deps:
+- git: https://github.com/nwtgck/hindent-show.git
+  commit: 0275850f8021823f061f1948cef5ff5f0f47952c
+...
+```
+
+Then, add `hindent-show` to your `package.yaml`.
+
+```yaml
+...
+library:
+ dependencies:
+ - hindent-show
+...
+```
+
+
+## Usage - pretty-print a data structure
 
 Here is an example to pretty-print a tree.
 
@@ -46,4 +68,33 @@ Node
     , right = Leaf
     }
 }
+```
+
+## Usage - indent of code
+
+```hs
+main :: IO ()
+main = do
+  let formated :: String
+      formated = hidentFormat "a = [332521132,20783,30,4093902,1390,109301,93132,3901,83912,218491,284913]"
+  putStrLn formated
+
+``` 
+
+### output
+
+```
+a =
+  [ 332521132
+  , 20783
+  , 30
+  , 4093902
+  , 1390
+  , 109301
+  , 93132
+  , 3901
+  , 83912
+  , 218491
+  , 284913
+  ]
 ```
