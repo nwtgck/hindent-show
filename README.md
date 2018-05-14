@@ -26,7 +26,7 @@ library:
 ```
 
 
-## Usage
+## Usage - pretty-print a data structure
 
 Here is an example to pretty-print a tree.
 
@@ -68,4 +68,33 @@ Node
     , right = Leaf
     }
 }
+```
+
+## Usage - indent of code
+
+```hs
+main :: IO ()
+main = do
+  let formated :: String
+      formated = hidentFormat "a = [332521132,20783,30,4093902,1390,109301,93132,3901,83912,218491,284913]"
+  putStrLn formated
+
+``` 
+
+### output
+
+```
+a =
+  [ 332521132
+  , 20783
+  , 30
+  , 4093902
+  , 1390
+  , 109301
+  , 93132
+  , 3901
+  , 83912
+  , 218491
+  , 284913
+  ]
 ```
